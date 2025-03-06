@@ -34,9 +34,7 @@ router.delete('/deleteContact', async (req, res) => {
     let getList = await getContacts();
     let getContact = await check((name as string));
 
-    if (getList.length === getContact.length) { res.json({error: "Contato não encontrado"}); return; }
-
-    console.log(name);
+    if (getList.length === getContact.length) { res.json({error: "Contato não encontrado" }); return; }
 
     try {
         await deleteContacts((name as string));
