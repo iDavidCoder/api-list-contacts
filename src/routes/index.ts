@@ -68,7 +68,7 @@ router.delete('/deleteContact', async (req, res) => {
         return;
     }
 
-    const deleteContact = getList.filter(line => line !== name);
+    const deleteContact = getList.filter(line => line.toLowerCase() !== (name as string).toLowerCase());
 
 
     if (getList.length === deleteContact.length) {
